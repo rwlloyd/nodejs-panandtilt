@@ -13,15 +13,16 @@ var app = express();
 
 // Set up the server
 // process.env.PORT is related to deploying on heroku //// may have to change this in production
-var server = app.listen(process.env.PORT || 3000, listen);
-
+//var server = app.listen(process.env.PORT || 3000, listen);
 
 // This call back just tells us that the server has started
-function listen() {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log('Example app listening at http://' + host + ':' + port);
-}
+//function listen() {
+//  var host = server.address().address;
+//  var port = server.address().port;
+//  console.log('Example app listening at http://' + host + ':' + port);
+
+var server = app.listen(3000)
+console.log('App listening on port 3000');
 
 app.use(express.static('public'));
 
@@ -70,7 +71,7 @@ const Gpio = require('pigpio').Gpio;
 const panServoPin = 23;
 const tiltServoPin = 24;
 const buttonPin = 25;
-const scanning = False;
+var scanning = false;
 
 // These are angles from the centre point
 const panMin = -60;
@@ -105,7 +106,7 @@ function setServo(servo, pos){
     
     //calculate the pulsewidth for the given position on the screen (400px)
     // pulsewidth is between 1000 and 2000 (0.1-0.2ms - 0-180 deg)
-    pulseWidth = map(pos, 0, 400, 1250, 1750);
+    pulseWidth = Math.floor(map(pos, 400, 0, 1250, 1750));
 
     servo.servoWrite(pulseWidth);
   }
