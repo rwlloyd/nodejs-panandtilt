@@ -1,4 +1,12 @@
 # Node.js interface for pan and tilt camera mechanism
+## Hardware
+Pan Servo SIG connected to GPIO 23
+
+Tilt Servo SIG connected to GPIO 24
+
+*Do not power the servos from the Raspberry Pi. Use external power supplies with common GND*
+
+---
 ## Installation
 
 From a clean Raspberry Pi image,
@@ -22,6 +30,8 @@ Install the required node packages
 Run the server. sudo is currently required to access the physical pins
 
     sudo node server.js
+
+---
 
 ## Usage
 
