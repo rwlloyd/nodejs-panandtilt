@@ -1,5 +1,9 @@
 # Node.js interface for pan and tilt camera mechanism
+
+<img src=Screenshot-v0.1.png width="300">
+
 ## Hardware
+
 Pan Servo SIG connected to GPIO 23
 
 Tilt Servo SIG connected to GPIO 24
